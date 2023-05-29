@@ -1,5 +1,4 @@
 # Importing dependecies
-import random
 from population import Population
 
 # Setting parameters

@@ -1,7 +1,7 @@
 import random
 
 class Population:
-    def __init__(self, board_size, size, fitness_func, mutation_rate):
+    def __init__(self, board_size: int, size: int, fitness_func: callable, mutation_rate: float):
         self.board_size = board_size
         self.size = size
         self.mutation_rate = mutation_rate
@@ -33,6 +33,6 @@ class Population:
             new_gene = random.randint(0, n - 1)
             chromosome[mutation_point] = new_gene
 
-    def eliminate(self):
+    def eliminate(self) -> None:
         self.population = sorted(self.population, key=lambda x: self.fitness_func(x))
         self.population = self.population[:self.size]
