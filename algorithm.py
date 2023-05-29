@@ -6,7 +6,7 @@ MAX_GENERATIONS = 1000
 MUTATION_RATE = 0.6
 
 # Fitness function
-def calc_fitness(chromosome):
+def calc_fitness(chromosome: list) -> int:
     clashes = 0
     n = len(chromosome)
     # Checking for horizontal and diagonal clashes
@@ -18,7 +18,7 @@ def calc_fitness(chromosome):
     return clashes 
 
 # Genetic Algorithm implementation
-def genetic_algorithm(board_size):
+def genetic_algorithm(board_size: int) -> tuple:
     curr_population = Population(
         board_size, POPULATION_SIZE, calc_fitness, MUTATION_RATE
     )
