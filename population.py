@@ -12,6 +12,7 @@ class Population:
 
     def __repr__(self) -> str:
         return f"{*self.population,} \n ======================="
+    
     def __getitem__(self, i):
         return self.population[i]
     
