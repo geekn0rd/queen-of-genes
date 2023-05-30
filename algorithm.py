@@ -1,7 +1,7 @@
 from population import Population
 
 # Setting parameters
-POPULATION_SIZE = 200
+POPULATION_SIZE = 400
 MAX_GENERATIONS = 1000
 MUTATION_RATE = 0.6
 
