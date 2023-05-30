@@ -18,14 +18,17 @@ def calc_fitness(chromosome: list) -> int:
     return clashes 
 
 # Genetic Algorithm implementation
-def genetic_algorithm(board_size: int) -> tuple:
+def genetic_algorithm(
+        board_size: int, pop_size: int = POPULATION_SIZE,
+        mut_rate: float = MUTATION_RATE, max_gen: int = MAX_GENERATIONS
+        ) -> tuple:
     curr_population = Population(
-        board_size, POPULATION_SIZE, calc_fitness, MUTATION_RATE
+        board_size, pop_size, calc_fitness, mut_rate
     )
     curr_population.sort()
     if calc_fitness(curr_population[0]) == 0:
         return curr_population[0], "Soultion found!", 1
-    for generaion in range(MAX_GENERATIONS):
+    for generaion in range(max_gen):
         curr_population.crossover()
         curr_population.mutate()
         curr_population.eliminate()
