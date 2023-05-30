@@ -11,7 +11,11 @@ class Population:
         ]
 
     def __repr__(self) -> str:
-        return f"{*self.population,} \n ======================="
+        rep = ""
+        for chrom in self.population:
+            rep += f"{chrom}\n"
+        rep += "========================="    
+        return rep    
     
     def __getitem__(self, i):
         return self.population[i]
